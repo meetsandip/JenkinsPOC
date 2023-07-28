@@ -9,7 +9,7 @@ pipeline {
 				}
 				stage('Build') {
     					steps {
-    					    bat "\"${tool 'MSBuild'}\" C:\\D-Drive\\POC\\Jenkins_POC\\Code\\TestApp\\AspDotNetJenkins.sln /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=C:\\D-Drive\\POC\\Jenkins_POC\\build"
+    					    bat "\"${tool 'MSBuild'}\" C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test-Pipeline\\TestApp.sln /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=C:\\D-Drive\\POC\\Jenkins_POC\\build"
     					}
 				}
 			}
