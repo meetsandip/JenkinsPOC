@@ -13,13 +13,13 @@ pipeline {
 				}
 				stage('Deploy') {
     					steps {
-						    bat ("C:\\Windows\\System32\\inetsrv\\appcmd stop apppool /apppool.name:WelcomeSite")
-							bat ("C:\\Windows\\System32\\inetsrv\\appcmd stop site /site.name:WelcomeSite")
+						    bat ("C:\\Windows\\System32\\inetsrv\\appcmd stop apppool /apppool.name:TestSite")
+							bat ("C:\\Windows\\System32\\inetsrv\\appcmd stop site /site.name:TestSite")
 							bat ("del C:\\D-Drive\\POC\\Jenkins_POC\\build\\Web.config")
-    					    bat("xcopy C:\\inetpub\\wwwroot\\WeclomeSite C:\\D-Drive\\POC\\Jenkins_POC\\ApplicationBackup\\backup /Y /O /X /E /H /K")
-							bat("xcopy C:\\D-Drive\\POC\\Jenkins_POC\\build C:\\inetpub\\wwwroot\\WeclomeSite /Y /O /X /E /H /K")
-							bat ("C:\\Windows\\System32\\inetsrv\\appcmd start apppool /apppool.name:WelcomeSite")
-							bat ("C:\\Windows\\System32\\inetsrv\\appcmd start site /site.name:WelcomeSite")
+    					    bat("xcopy C:\\inetpub\\wwwroot\\TestSite C:\\D-Drive\\POC\\Jenkins_POC\\ApplicationBackup\\backup /Y /O /X /E /H /K")
+							bat("xcopy C:\\D-Drive\\POC\\Jenkins_POC\\build C:\\inetpub\\wwwroot\\TestSite /Y /O /X /E /H /K")
+							bat ("C:\\Windows\\System32\\inetsrv\\appcmd start apppool /apppool.name:TestSite")
+							bat ("C:\\Windows\\System32\\inetsrv\\appcmd start site /site.name:TestSite")
     					}
 				}
 			}
