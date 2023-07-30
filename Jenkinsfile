@@ -13,14 +13,14 @@ pipeline {
 				}
 				stage('Deploy') {
     					steps {
-						    bat ("C:\\Windows\\System32\\inetsrv\\appcmd stop apppool /apppool.name:"WelcomeSite"")
-							bat ("C:\Windows\System32\inetsrv\appcmd stop site /site.name:"WelcomeSite"")
+						    bat ("C:\\Windows\\System32\\inetsrv\\appcmd stop apppool /apppool.name:WelcomeSite")
+							bat ("C:\Windows\System32\inetsrv\appcmd stop site /site.name:WelcomeSite")
 							bat ("del C:\\D-Drive\\POC\\Jenkins_POC\\build\Web.config")
     					    bat("xcopy C:\\inetpub\\wwwroot\\WeclomeSite C:\\D-Drive\\POC\\Jenkins_POC\\ApplicationBackup\\backup /O /X /E /H /K")
 							bat ("del C:\\D-Drive\\POC\\Jenkins_POC\\build\Web.config")
 							bat("xcopy C:\\D-Drive\\POC\\Jenkins_POC\\build C:\\inetpub\\wwwroot\\WeclomeSite /O /X /E /H /K")
-							bat ("C:\\Windows\\System32\\inetsrv\\appcmd start apppool /apppool.name:"WelcomeSite"")
-							bat ("C:\Windows\System32\inetsrv\appcmd start site /site.name:"WelcomeSite"")
+							bat ("C:\\Windows\\System32\\inetsrv\\appcmd start apppool /apppool.name:WelcomeSite")
+							bat ("C:\Windows\System32\inetsrv\appcmd start site /site.name:WelcomeSite")
     					}
 				}
 			}
